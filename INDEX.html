@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ApexPro X1 - Next-Gen Smartphone Landing Page</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        
+         @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+          :root{
+            --background:#080d20;
+            --surface:#101831;
+            --cyan: #13d9f2;
+            --pink: #f12b91;
+            --muted:#9ba9c5;
+            --text: #e8efff;
+        }
+        html{
+            scroll-behavior: smooth;
+            scroll-padding-top: 85px;
+        }
+        body{
+            background:var(--background) !important;
+            color: var(--text) !important;
+            font-family: 'Space Grotesk',sans-serif !important;
+        }
+        header{
+            background: rgba(8, 13, 32, 0.94) !important;
+            border-bottom: 1px solid #19304a;
+            backdrop-filter: blur(14px);
+        }
+        header span{
+            color: var(--cyan) !important;
+            font-family: 'DM Mono', monospace;
+            font-size: 1.15rem !important;
+        }
+          nav a{
+            color: var(--muted) !important;
+            font-family: 'DM Mono' , monospace;
+            font-size: 0.82rem;
+          }
+          nav a:hover{
+            color:var(--cyan) !important;
+          }
+          section{
+            position:relative;
+           background: var(--background) !important;
+          }
+          #hero{
+                        background: radial-gradient(ellipse at 85% 35%, rgba(19,217,242,0.10), transparent 42%), var(--background) !important;
+                        min-height: 78vh;
+            display: flex;
+        align-items: center;
+    }
+
+    h1, h2, h3, h4 {
+        color: var(--text) !important;
+        letter-spacing: -0.035em;
+    }
+
+    h1 span {
+        color: var(--cyan) !important;
+        text-shadow: 0 0 22px rgba(19, 217, 242, 0.22);
+    }
+
+    section p,
+    section li {
+        color: var(--muted) !important;
+        line-height: 1.8;
+    }
+
+    /* Feature and testimonial panels */
+    .rounded-xl,
+    .rounded-2xl {
+        border-radius: 12px !important;
+    }
+         #features .rounded-xl,
+    #testimonials .rounded-xl,
+    #location .rounded-xl,
+    #benefits .rounded-xl {
+        background: var(--surface) !important;
+        border: 1px solid #233550 !important;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.16);
+        transition: border-color 0.25s, transform 0.25s,
+                    box-shadow 0.25s;
+    }
+
+    #features .rounded-xl:hover,
+    #testimonials .rounded-xl:hover {
+        border-color: var(--cyan) !important;
+        transform: translateY(-5px);
+        box-shadow: 0 0 22px rgba(19, 217, 242, 0.09);
+    }
+
+    /* Buttons and links */
+    a[class*="bg-indigo-600"],
+    button {
+        background: var(--cyan) !important;
+        color: #071020 !important;
+        border: 1px solid var(--cyan);
+        border-radius: 5px !important;
+        font-weight: 700;
+        transition: 0.25s ease;
+    }
+
+    a[class*="bg-indigo-600"]:hover,
+    button:hover {
+        background: transparent !important;
+        color: var(--cyan) !important;
+        box-shadow: 0 0 16px rgba(19, 217, 242, 0.18);
+    }
+
+    #hero a[class*="border"] {
+        color: var(--cyan) !important;
+        border-color: var(--cyan) !important;
+        background: transparent !important;
+    }
+
+    #hero a[class*="border"]:hover {
+        background: rgba(19, 217, 242, 0.08) !important;
+    }
+
+    /* Product image */
+    #hero img,
+    #benefits img {
+        border: 1px solid #243a56;
+        box-shadow: 0 0 35px rgba(19, 217, 242, 0.10);
+    }
+
+    /* Pricing panel */
+    #pricing {
+        background:
+            radial-gradient(ellipse at center,
+            #152448, var(--background) 75%) !important;
+        border-top: 1px solid #19304a;
+        border-bottom: 1px solid #19304a;
+    }
+
+    #pricing .bg-white {
+        background: var(--surface) !important;
+        border: 1px solid var(--pink) !important;
+        box-shadow: 0 0 24px rgba(241, 43, 145, 0.10);
+    }
+
+    #pricing .text-indigo-600 {
+        color: var(--cyan) !important;
+    }
+
+    #pricing .text-indigo-200 {
+        color: var(--muted) !important;
+    }
+
+    /* Contact form */
+    #contact input,
+    #contact textarea {
+        background: #0b1228 !important;
+        color: var(--text) !important;
+        border: 1px solid #2b3d59 !important;
+        border-radius: 5px !important;
+    }
+
+    #contact input::placeholder,
+    #contact textarea::placeholder {
+        color: #8291af;
+    }
+
+    #contact input:focus,
+    #contact textarea:focus {
+        border-color: var(--cyan) !important;
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(19, 217, 242, 0.12);
+    }
+
+    /* Location and footer */
+    #location .text-indigo-600 {
+        color: var(--cyan) !important;
+    }
+
+    footer {
+        background: #050918 !important;
+        border-top: 1px solid #19304a;
+    }
+
+    footer h3 {
+        color: var(--cyan) !important;
+    }
+
+    footer p,
+    footer a {
+        color: var(--muted) !important;
+    }
+
+    footer a:hover {
+        color: var(--pink) !important;
+    }
+
+    /* Small-screen adjustments */
+    @media (max-width: 767px) {
+        #hero {
+            min-height: auto;
+        }
+
+        #hero h1 {
+            font-size: 2.5rem !important;
+            line-height: 1.15;
+        }
+
+        section {
+            padding-top: 3.5rem !important;
+            padding-bottom: 3.5rem !important;
+        }
+
+        header span {
+            font-size: 0.95rem !important;
+        }
+    }
+        </style> 
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans">
+
+    <!-- 1. Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <span class="text-2xl font-bold text-indigo-600">Tech Tinkerers hub</span>
+            </div>
+            <nav class="hidden md:flex space-x-6 lg:space-x-8 font-medium"></nav>
+                <a href="#hero" class="hover:text-indigo-600 transition">Home</a>
+                <a href="#features" class="hover:text-indigo-600 transition">Features</a>
+                <a href="#benefits" class="hover:text-indigo-600 transition">Benefits</a>
+                <a href="#testimonials" class="hover:text-indigo-600 transition">Testimonials</a>
+                <a href="#location" class="hover:text-indigo-600 transition">Where are we?</a>
+            </nav>
+            <div>
+                <a href="#pricing" class="bg-indigo-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-indigo-700 transition">Buy Now</a>
+            </div>
+    </header>
+                
+
+    <!-- 2. Hero Section -->
+    <section id="hero" class="py-16 md:py-24 bg-gradient-to-br from-indigo-50 to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-900">
+                    Experience the Future with <span class="text-indigo-600">ApexPro X1</span>
+                </h1>
+                <p class="text-lg text-slate-600">
+                    Discover unmatched performance, stunning camera clarity, and an all-day battery packed in a sleek titanium design.
+                </p>
+                <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
+                    <a href="#pricing" class="bg-indigo-600 text-white text-center px-6 py-3 rounded-lg font-medium shadow-lg hover:bg-indigo-700 transition">Get Started</a>
+                    <a href="#features" class="border border-slate-300 text-slate-700 text-center px-6 py-3 rounded-lg font-medium hover:bg-slate-100 transition">Learn More</a>
+                </div>
+            </div>
+            <div class="flex justify-center">
+                <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=600&q=80" alt="Smartphone Product" class="rounded-2xl shadow-2xl max-w-full h-auto">
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Features Section -->
+    <section id="features" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-slate-900 mb-4">Powerful Features</h2>
+            <p class="text-slate-600 max-w-2xl mx-auto mb-12">Built with cutting-edge technology to elevate your daily productivity and entertainment.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-slate-50 p-8 rounded-xl shadow-sm border border-slate-100 hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-lg flex items-center justify-center mx-auto mb-4 text-xl font-bold">⚡</div>
+                    <h3 class="text-xl font-semibold mb-2">Lightning Fast</h3>
+                    <p class="text-slate-600">Powered by the latest octa-core processor for seamless multitasking and gaming.</p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="bg-slate-50 p-8 rounded-xl shadow-sm border border-slate-100 hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-lg flex items-center justify-center mx-auto mb-4 text-xl font-bold">🔋</div>
+                    <h3 class="text-xl font-semibold mb-2">All-Day Battery</h3>
+                    <p class="text-slate-600">5000mAh battery with 120W fast charging gets you 100% in under 30 minutes.</p>
+                </div>
+                <!-- Feature 3 -->
+                <div class="bg-slate-50 p-8 rounded-xl shadow-sm border border-slate-100 hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-lg flex items-center justify-center mx-auto mb-4 text-xl font-bold">📸</div>
+                    <h3 class="text-xl font-semibold mb-2">Pro Camera</h3>
+                    <p class="text-slate-600">Capture crystal clear memories with a 108MP main sensor and night vision capabilities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Benefits Section -->
+    <section id="benefits" class="py-16 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+                <img src="https://images.unsplash.com/photo-1526738549149-8e07eca6c147?auto=format&fit=crop&w=600&q=80" alt="Benefits" class="rounded-2xl shadow-lg">
+            </div>
+            <div class="space-y-6">
+                <h2 class="text-3xl font-bold text-slate-900">Why Choose ApexPro X1?</h2>
+                <p class="text-slate-600">Yeh product aapki digital lifestyle ko upgrade karne ke liye best choice hai.</p>
+                <ul class="space-y-4">
+                    <li class="flex items-start space-x-3">
+                        <span class="text-green-500 font-bold">✔</span>
+                        <span class="text-slate-700"><strong>Hassle-free experience:</strong> Smooth UI with zero lag.</span>
+                    </li>
+                    <li class="flex items-start space-x-3">
+                        <span class="text-green-500 font-bold">✔</span>
+                        <span class="text-slate-700"><strong>Durability:</strong> Gorilla Glass Victus protection against drops and scratches.</span>
+                    </li>
+                    <li class="flex items-start space-x-3">
+                        <span class="text-green-500 font-bold">✔</span>
+                        <span class="text-slate-700"><strong>Value for Money:</strong> Premium features at an affordable price.</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Testimonials Section -->
+    <section id="testimonials" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-slate-900 mb-4">What Our Customers Say</h2>
+            <p class="text-slate-600 mb-12">Hear from the horse's mouth</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-slate-50 p-8 rounded-xl shadow-sm border border-slate-100 text-left">
+                    <p class="text-slate-700 italic mb-4">"I'm literally amazed by the battery life and camera quality. Best purchase!"</p>
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold">A</div>
+                        <div>
+                            <h4 class="font-semibold text-slate-900">Aarav Sharma</h4>
+                            <p class="text-xs text-slate-500">Software Engineer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-slate-50 p-8 rounded-xl shadow-sm border border-slate-100 text-left">
+                    <p class="text-slate-700 italic mb-4">"Fast charging feature ekdum kamaal ka hai. Busy office days me bohot help milti hai."</p>
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold">P</div>
+                        <div>
+                            <h4 class="font-semibold text-slate-900">Priya Verma</h4>
+                            <p class="text-xs text-slate-500">Product Designer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Pricing & CTA Section -->
+    <section id="pricing" class="py-16 bg-gradient-to-tr from-indigo-900 to-indigo-700 text-white text-center">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+            <h2 class="text-3xl sm:text-4xl font-bold">Ready to Upgrade Your Tech?</h2>
+            <p class="text-indigo-200 text-lg">Special launch offer available for a limited time only.</p>
+            <div class="bg-white text-slate-900 p-8 rounded-2xl shadow-xl max-w-md mx-auto space-y-4">
+                <h3 class="text-2xl font-bold">ApexPro X1</h3>
+                <div class="text-4xl font-extrabold text-indigo-600">₹29,999 <span class="text-sm font-normal text-slate-500"><s>₹39,999</s></span></div>
+                <p class="text-sm text-slate-600">Free Shipping & 1-Year Warranty Included.</p>
+                <a href="#" class="block w-full bg-indigo-600 text-white py-3 rounded-lg font-bold hover:bg-indigo-700 transition">Buy Now</a>
+            </div>
+        </div>
+    </section>
+    <!-- 7. Contact Section -->
+    <section id="contact" class="py-16 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-slate-900 mb-4">Get in Touch</h2>
+            <p class="text-slate-600 mb-12">Have questions or need support? Reach out to us!</p>
+            <form class="max-w-xl mx-auto space-y-4">
+                <input type="text" placeholder="Your Name" class="w-full p-3 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-indigo-600">
+                <input type="email" placeholder="Your Email" class="w-full p-3 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-indigo-600">
+                <textarea placeholder="Your Message" rows="5" class="w-full p-3 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-indigo-600"></textarea>
+                <button type="submit" class="bg-indigo-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-indigo-700 transition">Send Message</button>
+            </form>
+        </div>
+    </section>
+    <!-- 8. Where Are We Section -->
+    <section id="where are we?" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-slate-900 mb-4">Where Are We?</h2>
+            <p class="text-slate-600 mb-12">Visit our headquarters or find us at our retail locations.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-slate-50 p-8 rounded-xl shadow-sm border border-slate-100">
+                    <h3 class="text-xl font-semibold mb-2">Headquarters</h3>
+                    <p class="text-slate-700">123 Tech Avenue, Silicon City, CA 94043</p>
+                    
+    <!-- 8. Where Are We Section -->
+    <section id="location" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-slate-900 mb-4">
+                Where Are We?
+            </h2>
+
+            <p class="text-slate-600 mb-12">
+                Visit our headquarters or find us at our retail locations.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                <div class="bg-slate-50 p-8 rounded-xl shadow-sm border border-slate-100">
+                    <h3 class="text-xl font-semibold mb-2">Headquarters</h3>
+
+                    <p class="text-slate-700">
+                        123 Tech Avenue, Silicon City, CA 94043
+                    </p>
+
+                    <p class="text-slate-700">
+                        Phone: +1 123 456 7890
+                    </p>
+
+                    <a href="https://www.google.com/maps/place/Silicon+City,+Indore,+Madhya+Pradesh"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="text-indigo-600 hover:underline">
+                        Find us
+                    </a>
+                </div>
+
+                <div class="bg-slate-50 p-8 rounded-xl shadow-sm border border-slate-100">
+                    <h3 class="text-xl font-semibold mb-2">Retail Locations</h3>
+
+                    <p class="text-slate-700">
+                        Find us in major cities across the country.
+                        Visit our website for a full list of locations.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- 7. Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <h3 class="text-white text-lg font-bold mb-4">ApexPro</h3>
+                <p class="text-sm">Empowering your digital life with next-generation smart devices.</p>
+            </div>
+            <div>
+                <h3 class="text-white text-lg font-bold mb-4">Contact Info</h3>
+                <p class="text-sm">Email: support@apexpro.com</p>
+                <p class="text-sm">Phone: +91 98765 43210</p>
+            </div>
+            <div>
+                <h3 class="text-white text-lg font-bold mb-4">Social Links</h3>
+                <div class="flex space-x-4">
+                    <a href="#" class="hover:text-white transition">Twitter (X)</a>
+                    <a href="#" class="hover:text-white transition">Facebook</a>
+                    <a href="#" class="hover:text-white transition">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 pt-8 border-t border-slate-800 text-center text-sm">
+            <p>&copy; 2026 Tech_Tinkerers hub. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
